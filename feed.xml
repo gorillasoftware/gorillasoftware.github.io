@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Blog Name</title>
+  <subtitle>Blog subtitle</subtitle>
+  <id>http://blog.url.com/</id>
+  <link href="http://blog.url.com/"/>
+  <link href="http://blog.url.com/feed.xml" rel="self"/>
+  <updated>2013-09-19T00:00:00Z</updated>
+  <author>
+    <name>Blog Author</name>
+  </author>
+  <entry>
+    <title>Overview of available ruby markdown libraries</title>
+    <link rel="alternate" href="/blog/2013/09/19/ruby-markdown-libraries/"/>
+    <id>/blog/2013/09/19/ruby-markdown-libraries/</id>
+    <published>2013-09-19T00:00:00Z</published>
+    <updated>2013-09-19T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;img alt="Markdown in in iA Writer" src="/blog/2013/09/19/ruby-markdown-libraries/teaser-0e0f357c.gif" /&gt;
+&lt;small&gt;Markdown text in iA Writer&lt;/small&gt;&lt;/p&gt;
+
+&lt;p&gt;I was confronted by the technology decision lately of chosing a ruby
+markdown library for a Rails project. The following overview was mostly
+of personal interest, but may be helpful for other people too. 
+For errata or missing libraries please contact me via the comments form.&lt;/p&gt;
+
+&lt;p&gt;These were my requisites&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Support for tables&lt;/li&gt;
+&lt;li&gt;Active development&lt;/li&gt;
+&lt;li&gt;Support for Latex/PDF export (alternative via other markup language) &lt;sup&gt;A&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;Native markdown support for id/class &lt;sup&gt;A&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;Pure ruby (no C extensions) &lt;sup&gt;A&lt;/sup&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;sup&gt;A&lt;/sup&gt; optional&lt;/p&gt;
+
+&lt;p&gt;READMORE&lt;/p&gt;
+
+&lt;table&gt;&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Candidates&lt;/th&gt;
+&lt;th style="text-align: center"&gt;tables&lt;/th&gt;
+&lt;th style="text-align: center"&gt;pdf&lt;/th&gt;
+&lt;th style="text-align: center"&gt;pure ruby&lt;/th&gt;
+&lt;th style="text-align: center"&gt;Active development&lt;sup&gt;B&lt;/sup&gt;&lt;/th&gt;
+&lt;th&gt;License&lt;/th&gt;
+&lt;th style="text-align: right"&gt;Remarks&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Github Markup &lt;a href="https://github.com/github/markup"&gt;↩&lt;/a&gt;&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;/td&gt;
+&lt;td style="text-align: center"&gt;✓&lt;/td&gt;
+&lt;td style="text-align: center"&gt;✓&lt;/td&gt;
+&lt;td&gt;MIT&lt;/td&gt;
+&lt;td style="text-align: right"&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;del&gt;Markup&lt;/del&gt; &lt;a href="https://github.com/jameswilding/markup"&gt;↩&lt;/a&gt;&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;/td&gt;
+&lt;td style="text-align: center"&gt;✓&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td style="text-align: right"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Redcarpet &lt;a href="https://github.com/vmg/redcarpet"&gt;↩&lt;/a&gt;&lt;/td&gt;
+&lt;td style="text-align: center"&gt;✓&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;/td&gt;
+&lt;td style="text-align: center"&gt;✓&lt;/td&gt;
+&lt;td style="text-align: center"&gt;✓&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td style="text-align: right"&gt;1, 2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;RDiscount &lt;a href="https://github.com/davidfstr/rdiscount"&gt;↩&lt;/a&gt;&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;/td&gt;
+&lt;td style="text-align: center"&gt;✓&lt;/td&gt;
+&lt;td&gt;BSD&lt;/td&gt;
+&lt;td style="text-align: right"&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Bluecloth &lt;a href="https://github.com/mislav/bluecloth/"&gt;↩&lt;/a&gt;&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;/td&gt;
+&lt;td style="text-align: center"&gt;✓&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td style="text-align: right"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Bluecloth 2 &lt;a href="https://github.com/ged/bluecloth"&gt;↩&lt;/a&gt;&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;/td&gt;
+&lt;td style="text-align: center"&gt;✓&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td style="text-align: right"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;kramdown &lt;a href="https://github.com/gettalong/kramdown"&gt;↩&lt;/a&gt;&lt;/td&gt;
+&lt;td style="text-align: center"&gt;✓&lt;/td&gt;
+&lt;td style="text-align: center"&gt;✓&lt;/td&gt;
+&lt;td style="text-align: center"&gt;✓&lt;/td&gt;
+&lt;td style="text-align: center"&gt;✓&lt;/td&gt;
+&lt;td&gt;MIT&lt;/td&gt;
+&lt;td style="text-align: right"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Maruku &lt;a href="https://github.com/bhollis/maruku"&gt;↩&lt;/a&gt;&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;/td&gt;
+&lt;td style="text-align: center"&gt;✓&lt;/td&gt;
+&lt;td style="text-align: center"&gt;✓&lt;/td&gt;
+&lt;td style="text-align: center"&gt;✓&lt;/td&gt;
+&lt;td&gt;MIT&lt;/td&gt;
+&lt;td style="text-align: right"&gt;4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;h4&gt;Non-ruby implementations&lt;/h4&gt;
+
+&lt;table&gt;&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Candidates&lt;/th&gt;
+&lt;th style="text-align: center"&gt;tables&lt;/th&gt;
+&lt;th style="text-align: center"&gt;pdf&lt;/th&gt;
+&lt;th style="text-align: center"&gt;pure ruby&lt;/th&gt;
+&lt;th style="text-align: center"&gt;Active development&lt;sup&gt;B&lt;/sup&gt;&lt;/th&gt;
+&lt;th&gt;License&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;pandoc-markdown &lt;a href="http://johnmacfarlane.net/pandoc/"&gt;↩&lt;/a&gt;&lt;/td&gt;
+&lt;td style="text-align: center"&gt;✓&lt;/td&gt;
+&lt;td style="text-align: center"&gt;✓&lt;/td&gt;
+&lt;td style="text-align: center"&gt;-&lt;/td&gt;
+&lt;td style="text-align: center"&gt;✓&lt;/td&gt;
+&lt;td&gt;GPL&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MultiMarkdown &lt;a href="https://github.com/fletcher/MultiMarkdown"&gt;↩&lt;/a&gt; &lt;br&gt;(aka MultiMarkdown.pl)&lt;/td&gt;
+&lt;td style="text-align: center"&gt;✓&lt;/td&gt;
+&lt;td style="text-align: center"&gt;✓&lt;/td&gt;
+&lt;td style="text-align: center"&gt;-&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MultiMarkdown &lt;a href="https://github.com/fletcher/peg-multimarkdown"&gt;↩&lt;/a&gt; &lt;br&gt;(aka peg-multimarkdown or MultiMarkdown v3)&lt;/td&gt;
+&lt;td style="text-align: center"&gt;✓&lt;/td&gt;
+&lt;td style="text-align: center"&gt;✓&lt;/td&gt;
+&lt;td style="text-align: center"&gt;-&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MultiMarkdown 4 &lt;a href="https://github.com/fletcher/MultiMarkdown-4"&gt;↩&lt;/a&gt;&lt;/td&gt;
+&lt;td style="text-align: center"&gt;✓&lt;/td&gt;
+&lt;td style="text-align: center"&gt;✓&lt;/td&gt;
+&lt;td style="text-align: center"&gt;-&lt;/td&gt;
+&lt;td style="text-align: center"&gt;✓&lt;/td&gt;
+&lt;td&gt;GPL/MIT&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;h2&gt;Remarks&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Redcarpet is the Github Markdown rendering library used in Github Markdown&lt;/li&gt;
+&lt;li&gt;This document is a markdown file rendered with Redcarpet (via Middleman), see &lt;a href="https://github.com/gorillasoftware/gorillasoftware/blob/master/source/blog/2013-09-19-ruby-markdown-libraries.markdown"&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;RDiscount is a wrapper for Discount (Discount is an implementation of John Gruber&amp;rsquo;s Markdown markup language in C)&lt;/li&gt;
+&lt;li&gt;Support for tables via inline HTML&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;sup&gt;B&lt;/sup&gt; I presume a project with multiple commits to the project repository in the last 12
+months as in active development.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Come in, we're open</title>
+    <link rel="alternate" href="/blog/2013/09/16/come-in-we-are-open/"/>
+    <id>/blog/2013/09/16/come-in-we-are-open/</id>
+    <published>2013-09-16T00:00:00Z</published>
+    <updated>2013-09-16T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;img alt="Open 24 Hrs - Money Change" src="/blog/2013/09/16/come-in-we-are-open/teaser-ae68a2fa.jpg" /&gt;
+&lt;small&gt;Open 24 Hrs - Money Change &lt;a href="http://www.flickr.com/photos/ell-r-brown/4039347263"&gt;↩&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;tl;dr&lt;/strong&gt; – Long story short: gorilla software is looking for thrilling and
+challenging web projects. If you are searching for a skilled Full Stack
+developer for your next web experience drop me a line at
+&lt;a href="mailto:sebastian@gorillasoftware.ch"&gt;sebastian@gorillasoftware.ch&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class="separator"&gt;&lt;div class="line line-1"&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;In den letzten zwei Jahren habe ich verschiedene interessante Projekte
+erfolgreich durchführen können und bin wieder am aquirieren.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Software Entwicklung: Kurz- bis Mittelfristig, auf Projektbasis oder als Freelancer&lt;/li&gt;
+&lt;li&gt;Mittel- bis Langfristige Projektbegleitung von Kick-off bis Go-Live&lt;/li&gt;
+&lt;li&gt;Bootstrapping: Consulting &amp;amp; Coaching&lt;/li&gt;
+&lt;li&gt;On-site beim Kunden oder in meinem Büro&lt;/li&gt;
+&lt;li&gt;Verfügbar ab Oktober&lt;/li&gt;
+&lt;li&gt;Kapazität: 50% bis 80%&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Meine Stärken und aktuellen Vorlieben sind:&lt;/p&gt;
+
+&lt;p&gt;Backend Stack:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Ruby (Ruby on Rails, Sinatra)&lt;/li&gt;
+&lt;li&gt;SQL (PostgresSQL, MySQL) &amp;amp; NoSQL (Redis, MongoDB)&lt;/li&gt;
+&lt;li&gt;JavaScript/CoffeeScript (Node.js, Express)&lt;/li&gt;
+&lt;li&gt;*NIX&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Frontend Stack:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;HTML5/CSS3&lt;/li&gt;
+&lt;li&gt;JavaScript/CoffeeScript&lt;/li&gt;
+&lt;li&gt;Backbone.js&lt;/li&gt;
+&lt;li&gt;Middlemanapp/Yeoman (Yo, Grunt, Bower)/RequireJS&lt;/li&gt;
+&lt;li&gt;Mobile Web-Applikationen&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Weitere Informationen und das Kontaktformular finden sie unter
+&lt;a href="http://gorillasoftware.ch"&gt;http://gorillasoftware.ch&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class="separator"&gt;&lt;div class="line line-1"&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Update 2013-09-26: Full German description added&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Conway's Game of Life, again</title>
+    <link rel="alternate" href="/blog/2013/09/14/game-of-life/"/>
+    <id>/blog/2013/09/14/game-of-life/</id>
+    <published>2013-09-14T00:00:00Z</published>
+    <updated>2013-09-14T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;img src="/blog/2013/09/14/game-of-life/teaser-11dfa1c0.gif" /&gt;&lt;p&gt;After having participated at a Coderetreat &lt;a href="/blog/2013/09/12/code-retreat/"&gt;last week&lt;/a&gt;I decided to implement my own version of the game in JavaScript.  &lt;/p&gt;&lt;div id="gol"&gt;&lt;p&gt;&lt;div class="row"&gt;&lt;canvas class="small-12" style="height: 300px; background-color: white; display: block; margin: 0 auto; box-shadow: #111 0 0 1px;"&gt;&lt;/canvas&gt;&lt;/div&gt;&lt;/p&gt;&lt;p&gt; &lt;div class="label"&gt;Note:&lt;/div&gt; Click and drag on the grid to create living cells.&lt;/p&gt;&lt;p&gt;&lt;div class="row"&gt;&lt;div class="columns small-12 medium-1"&gt;&lt;p&gt;&lt;div class="round alert label"&gt;Generation: &lt;span class="js-sequence"&gt;0&lt;/span&gt;&lt;/div&gt;&lt;/p&gt;&lt;/div&gt;&lt;div class="columns small-6 medium-offset-9 medium-1"&gt;&lt;p&gt;&lt;input class="js-toggle small button radius" type="button" value="Start" /&gt;&lt;/p&gt;&lt;/div&gt;&lt;div class="columns small-6 medium-1"&gt;&lt;p&gt;&lt;input class="js-reset small button radius" type="button" value="Reset" /&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;These are the ingredients: &lt;/p&gt;&lt;ul&gt;&lt;li&gt; &lt;a href="http://paperjs.org"&gt;Paper.js&lt;/a&gt; — The Swiss Army Knife of Vector Graphics Scripting.&lt;/li&gt;&lt;li&gt; &lt;a href="http://backbonejs.org"&gt;Backbone.js&lt;/a&gt; — Glue the game and UI stuff together&lt;/li&gt;&lt;li&gt; &lt;a href="http://yeoman.io/"&gt;Yeoman&lt;/a&gt; / &lt;a href="http://gruntjs.com/"&gt;Grunt&lt;/a&gt; / &lt;a href="http://bower.io/"&gt;Bower&lt;/a&gt; / &lt;a href="http://requirejs.org/"&gt;RequireJS&lt;/a&gt; — Dependency handling and building (Hm, this was'n really necessary. Just out of personal curiosity)&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;The code is available on github &lt;/p&gt;&lt;ul&gt;&lt;li&gt; &lt;a href="https://github.com/kpricorn/game-of-life"&gt;kpricorn/game-of-life&lt;/a&gt; — Game of Life implementation&lt;/li&gt;&lt;li&gt; &lt;a href="https://github.com/kpricorn/game-of-life-sample"&gt;kpricorn/game-of-life-sample&lt;/a&gt; — Sample JS App&lt;/li&gt;&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <title>The Coderetreat – Conway's Game of Life</title>
+    <link rel="alternate" href="/blog/2013/09/12/code-retreat/"/>
+    <id>/blog/2013/09/12/code-retreat/</id>
+    <published>2013-09-12T00:00:00Z</published>
+    <updated>2013-09-12T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;img src="/blog/2013/09/12/code-retreat/retreat-199da54c.jpg" /&gt;&lt;small&gt;Retreat at Long Island. Engraving by J.C. Armytage from painting by M.A. Wageman &lt;a href="http://www.flickr.com/photos/ooocha/2594127956/"&gt;↩&lt;/a&gt;&lt;/small&gt;&lt;h3&gt;The Coderetreat&lt;/h3&gt;&lt;p&gt;Yesterday, I took part in my first  &lt;a href="http://coderetreat.org/"&gt;Coderetreat&lt;/a&gt; at the  &lt;a href="ch-open.ch/wstage/workshop-tage/2013/aktuelles-programm-2013/ws-15-coderetreat-honing-the-craft-together/"&gt;/ch/open workshop days &lt;/a&gt; in Zürich. I was pretty sceptical about the day to come. The course description didn't mention much about the topics which are to be worked on. But I was also looking forward to work on my &lt;em&gt;social coding skills&lt;/em&gt;.  &lt;/p&gt;&lt;h3&gt;The course process&lt;/h3&gt;&lt;p&gt;The main task, we were working on for the whole day was called &lt;a href="http://en.wikipedia.org/wiki/Conway's_Game_of_Life"&gt;Conway's Game of Life&lt;/a&gt;.&lt;blockquote&gt;The Game of Life, also known simply as Life, is a cellular automaton devised by the British mathematician John Horton Conway in 1970. The "game" is a zero-player game, meaning that its evolution is determined by its initial state, requiring no further input. One interacts with the Game of Life by creating an initial configuration and observing how it evolves. &lt;cite&gt;&lt;a href="http://en.wikipedia.org/wiki/Conway's_Game_of_Life"&gt;Wikipedia&lt;/a&gt;&lt;/cite&gt;&lt;/blockquote&gt;&lt;/p&gt;&lt;h4&gt;Rules&lt;/h4&gt;&lt;p&gt;&lt;ol&gt;&lt;li&gt;Any live cell with fewer than two live neighbours dies, as if caused by under-population.&lt;/li&gt;&lt;li&gt;Any live cell with two or three live neighbours lives on to the next generation.&lt;/li&gt;&lt;li&gt;Any live cell with more than three live neighbours dies, as if by overcrowding.&lt;/li&gt;&lt;li&gt;Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.&lt;/li&gt;&lt;/ol&gt;&lt;/p&gt;&lt;p&gt;The main focus of the Coderetreat day wasn't the taks itself. It was more about the approach with focus on clean, re-usable code and test driven  development. The session lasted 45' each, with a 15' review session. &lt;/p&gt;&lt;p&gt;I'll try to summarize shortly the different sessions, what the individual goal was and my lessons learned. &lt;/p&gt;&lt;h4&gt;Session #1 - Warm-up&lt;/h4&gt;&lt;p&gt;This was mostly a warm-up round. As I was used to TDD already, I could dive into the problem solving immediately as the driver. &lt;/p&gt;&lt;ul&gt;&lt;li&gt;Using a single file for specs and production code turned out to be a good choice for TDD, especially in early phases. &lt;/li&gt;&lt;li&gt;It's helpful to invest time and effort into your development environment. Being able to run the specs quickly with a keyboard shortcut (I use  &lt;a href="https://github.com/skalnik/vim-vroom"&gt;vim-vroom&lt;/a&gt; for that) or automated (e.g. with  &lt;a href="https://github.com/guard/guard"&gt;guard&lt;/a&gt; ) helps you to pick up speed, especially when moving between production-and test-code. &lt;/li&gt;&lt;li&gt;I liked the fact, that we had to delete the code after the session was over.&lt;/li&gt;&lt;/ul&gt;&lt;h4&gt;Session #2 - New constraint: No return values&lt;/h4&gt;&lt;p&gt;After changing groups, the coding started again from zero. As an additional constraint for this session, we were not allowed to use return values. &lt;/p&gt;&lt;p&gt;In this session, you could clearly see, how important it is to talk to your coding partner. Some challenges are better approached by thoroughly discuss a possible solution or approach upfront. In my opinion, this is what makes pair programming so valuable. &lt;/p&gt;&lt;h4&gt;Session #3 - New constraint: No conditionals&lt;/h4&gt;&lt;p&gt;OK, this time no conditionals. Almost all the groups came up with some sort of dictionary decision tree based solution. The proposed Object Oriented approach first seemed as a total overkill (it was some kind of state machine, where a cell could trigger a state change of a counter depending on it's own life state). &lt;/p&gt;&lt;hr /&gt;&lt;h4&gt;Session #4 - New constraint: Time&lt;/h4&gt;&lt;p&gt;In my opinion, this was the best session. The 'Write test/implementation' and refactoring cycles were time-boxed to 3'. Later this time was reduced to 2' and even 1'. The implementation and test code that was not yet finished (green) had to be deleted after every cycle. &lt;/p&gt;&lt;p&gt;Also if the code quality was questionable, this was the session were I came closest to a running implementation. It forced to shrink your coding cycles to about one or two lines per production and test code each. This constraint really kept you going the red/green TDD iteration path. And it forces you to be proficient in your development environment. &lt;/p&gt;&lt;h4&gt;Session #5 - The Devil is in the details&lt;/h4&gt;&lt;p&gt;For the last session, I was working with a ActionScript/PHP developer and we were struggling in finding a suitable environment, that fit for both. It showed pretty quickly, that for a successful pairing session it's essential that both participants are familiar with the environment. As for me, I am using vim together with the Dvorak keyboard layout. You seldom find people who are familiar with this environment (that is also my biggest doubt about using it). But even a slight little change in your work-flow can already slow you down drastically (like the different layouts used in Switzerland like German, Swiss-German, US, ...). &lt;/p&gt;&lt;p&gt;If you are working together with a vim user, these issues can be addressed by using some sort of screen sharing (e.g. tmux). But again, it forces many people to leave their known environment. Perhaps the emerging usage of web IDEs like &lt;a href="https://c9.io/"&gt;cloud9&lt;/a&gt;can facilitate pair programming. &lt;/p&gt;&lt;h3&gt;The follow-ups&lt;/h3&gt;&lt;p&gt;As a follow up, I implemented the Game of Life in CoffeeScript. The code is
+available &lt;a href="https://github.com/kpricorn/game-of-life"&gt;here&lt;/a&gt;I will write a post about the implementation details. &lt;/p&gt;&lt;h3&gt;Summary&lt;/h3&gt;&lt;p&gt;All in all it was a great and exciting experience and I highly recommend to anyone to participate in such a Coderetreat day. &lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>FEC13 - Day 2</title>
+    <link rel="alternate" href="/blog/2013/08/30/fec13-ii/"/>
+    <id>/blog/2013/08/30/fec13-ii/</id>
+    <published>2013-08-30T00:00:00Z</published>
+    <updated>2013-08-30T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;img alt="Front page of The Economist, 17 June 2000" src="/blog/2013/08/30/fec13-ii/frontend-2c26ca15.jpg" /&gt;
+&lt;small&gt;Front page of The Economist, 17 June 2000 &lt;a href="http://www.flickr.com/photos/criminalintent/3534628502"&gt;↩&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+
+&lt;p&gt;Second day of Frontend Conf Zürich 13. The schedule looks promising. Here are
+my picks of today.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h2&gt;&lt;a href="https://twitter.com/danrubin"&gt;Dan Rubin&lt;/a&gt; - The New Language of Web Design&lt;/h2&gt;
+
+&lt;p&gt;★★★★✩&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Responsive Web Design&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Term borrowed from architecture. Example: Building in Paris where
+the amount of incoming light is changing over the day.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Scroll&lt;/em&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;A scroll is a roll of papyrus, parchment, or paper which has been written,
+drawn or painted upon for the purpose of transmitting information or using as a
+decoration.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;30 years later, apple reinvents scrolling and moves on to panning.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Naming of bootstrap&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;First was Blueprint, but that was too closely connected to styleguide. Blueprint (CSS) already taken.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Better practice &amp;gt; best practice&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;A best practice today may be outdated in a couple of years.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Fold/Above the fold&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The fold, as used in web design, describes the area which is visible in the
+browser&amp;rsquo;s viewport without scrolling. A better practice name for this may be
+the scroll.&lt;/p&gt;
+
+&lt;p&gt;See: &lt;a href="http://designshack.net/articles/above-the-scroll-does-it-matter-anymore/"&gt;http://designshack.net/articles/above-the-scroll-does-it-matter-anymore/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Bleed&lt;/em&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Bleed is a printing term that refers to printing that goes beyond the edge of
+the sheet before trimming. In other words, the bleed is the area to be trimmed
+off.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr&gt;
+
+&lt;h2&gt;&lt;a href="https://twitter.com/johnjpeebles"&gt;John Peebles&lt;/a&gt; - How to Build the Perfect Product Your Users Want But Can&amp;rsquo;t Describe&lt;/h2&gt;
+
+&lt;p&gt;★★★★✩&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;The 5 whys&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://en.wikipedia.org/wiki/5_Whys"&gt;http://en.wikipedia.org/wiki/5_Whys&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2&gt;&lt;a href="https://twitter.com/chrisdavidmills"&gt;Chris Mills&lt;/a&gt; - Getting rid of Images using CSS3&lt;/h2&gt;
+
+&lt;p&gt;Pointed me to Lea Verou &lt;a href="http://lea.verou.me/"&gt;http://lea.verou.me/&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://leaverou.github.io/contrast-ratio/"&gt;http://leaverou.github.io/contrast-ratio/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>FEC13 - Day 1</title>
+    <link rel="alternate" href="/blog/2013/08/29/fec13-i/"/>
+    <id>/blog/2013/08/29/fec13-i/</id>
+    <published>2013-08-29T00:00:00Z</published>
+    <updated>2013-08-29T00:00:00Z</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;img alt="Unlock / Lock - user interface issue with bathroom doors at Microsoft, Redmond Campus, Redmond, Washington, USA" src="/blog/2013/08/29/fec13-i/frontend-e95a2d0e.jpg" /&gt;
+&lt;small&gt;Unlock / Lock - user interface issue with bathroom doors at Microsoft, Redmond Campus, Redmond, Washington, USA &lt;a href="http://www.flickr.com/photos/wonderlane/4315076635"&gt;↩&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+
+&lt;p&gt;Here is my short rating and overview of the Thursday talks of Frontend
+Conference in Zürich. The ratings are highly subjective.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h2&gt;Mark Otto - Future of Frontend Frameworks&lt;/h2&gt;
+
+&lt;p&gt;★★★★✩&lt;/p&gt;
+
+&lt;p&gt;Call it Github/Twitter biased, but I liked the speaker. I&amp;rsquo;m always
+thrilled when &amp;lsquo;designers&amp;rsquo; do probably code better than you.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/jonathantneal/MediaClass"&gt;https://github.com/jonathantneal/MediaClass&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.framerjs.com/"&gt;http://www.framerjs.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://maker.github.io/ratchet/"&gt;http://maker.github.io/ratchet/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://purecss.io/"&gt;http://purecss.io/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2&gt;Hans Christian Reinl - Be Friends With Your Designers and Style Guides&lt;/h2&gt;
+
+&lt;p&gt;★★✩✩✩&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;chaotic, nothing new - The talk didn&amp;rsquo;t seem to me very consistent in
+topic.&lt;/li&gt;
+&lt;li&gt;when did you last use quotes? - Why is one of the main (and mostly
+nicest) styleguide components always a quote.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img alt="Blockquotes. Screenshot of bootstrap CSS docs" src="/blog/2013/08/29/fec13-i/quotes-2de269a7.png" /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://frontify.com/"&gt;http://frontify.com/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Some own ideas discovered while looking for UI state in CSS:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://css-tricks.com/the-checkbox-hack/"&gt;http://css-tricks.com/the-checkbox-hack/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://podlipensky.com/2013/06/css-only-load-images-on-demand/"&gt;http://podlipensky.com/2013/06/css-only-load-images-on-demand/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2&gt;Vitaly Friedman - Responsive Web Design: Clever Tips and Techniques&lt;/h2&gt;
+
+&lt;p&gt;★★★★★&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Very inspiring talk, cutting edge hacks and workarounds&lt;/li&gt;
+&lt;li&gt;Shocking: it&amp;rsquo;s 2013 annd we have to apply such patterns&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Atomic design&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://coding.smashingmagazine.com/2013/08/02/other-interface-atomic-design-sass/"&gt;http://coding.smashingmagazine.com/2013/08/02/other-interface-atomic-design-sass/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://patternlab.bradfrostweb.com/"&gt;http://patternlab.bradfrostweb.com/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Progressive reduction (theory and example)&lt;/h3&gt;
+
+&lt;p&gt;I guess, this will give developers headache&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://layervault.tumblr.com/post/42361566927/progressive-reduction"&gt;http://layervault.tumblr.com/post/42361566927/progressive-reduction&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://layervault.tumblr.com/post/42442865260/implementing-progressive-reduction"&gt;http://layervault.tumblr.com/post/42442865260/implementing-progressive-reduction&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;SVG/Icon-Stacks&lt;/h3&gt;
+
+&lt;p&gt;The SVG Stack with the anchor/target CSS style is a neat idea. Sadly,
+it&amp;rsquo;s not well supported by the current browsers.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://simurai.com/post/20251013889/svg-stacks"&gt;http://simurai.com/post/20251013889/svg-stacks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://conor.cc/posts/icon-stacks"&gt;http://conor.cc/posts/icon-stacks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://conor.cc/posts/textured-icons-with-icon-stacks"&gt;http://conor.cc/posts/textured-icons-with-icon-stacks&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;ImageOptim&lt;/h3&gt;
+
+&lt;p&gt;Only for reference. I haven&amp;rsquo;t checked those.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://imageoptim.com/"&gt;http://imageoptim.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://pngmini.com/"&gt;http://pngmini.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="http://jpegmini.com/mac"&gt;http://jpegmini.com/mac&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://github.com/JamieMason/ImageOptim-CLI"&gt;https://github.com/JamieMason/ImageOptim-CLI&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Good resource: Conor Muirhead&lt;/p&gt;
+
+&lt;h3&gt;srcset&lt;/h3&gt;
+
+&lt;p&gt;This will make &lt;code&gt;data-src&lt;/code&gt; obsolete, hopefully.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.w3.org/html/wg/drafts/srcset/w3c-srcset/"&gt;http://www.w3.org/html/wg/drafts/srcset/w3c-srcset/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2&gt;Denys Mishunov - Let me tell you a story&lt;/h2&gt;
+
+&lt;p&gt;★★★★✩&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Mid-life crisis &amp;ndash; I wasn&amp;rsquo;t totally sure about his intentions, but I
+liked his stories.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2&gt;Urban Etter - Frontend Performance - Where it matters&lt;/h2&gt;
+
+&lt;p&gt;★✩✩✩✩&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Stuff that is done by any decent framework&lt;/li&gt;
+&lt;li&gt;I&amp;rsquo;m wondering, how serious SRF is taking it&amp;rsquo;s web development&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2&gt;Kim Joar Bekkelund - Patterns of Large-Scale Javascript Apps&lt;/h2&gt;
+
+&lt;p&gt;★★★★★&lt;/p&gt;
+
+&lt;p&gt;Recommended book: Growing Object-Oriented Software Guided by Tests&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The java guy&lt;/li&gt;
+&lt;li&gt;Dependency injection, pass data into a module&lt;/li&gt;
+&lt;li&gt;Only access DOM/data within it&amp;rsquo;s own scope&lt;/li&gt;
+&lt;li&gt;Avoid the need for the DOM in modules&lt;/li&gt;
+&lt;li&gt;Personal goal: Write an app without jquery/zepto&lt;/li&gt;
+&lt;li&gt;AMD &amp;lt; commonjs (or ECMAScript 6) in current browsers&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Personal goal: use require.js / bower / TypeScript&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="http://superherojs.com/"&gt;http://superherojs.com/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="http://www.growing-object-oriented-software.com/"&gt;http://www.growing-object-oriented-software.com/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="http://bekk.no"&gt;http://bekk.no&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://speakerdeck.com/kimjoar/patterns-of-large-scale-javascript-applications"&gt;https://speakerdeck.com/kimjoar/patterns-of-large-scale-javascript-applications&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+</feed>

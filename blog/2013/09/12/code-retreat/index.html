@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content='width=device-width,initial-scale=1' name='viewport'>
+<meta charset='utf-8'>
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+<meta content='Individuelle Lösungen fürs Web. Ein Full-Stack Web-Engineering Shop in Zürich, Schweiz' name='description'>
+<meta content='Software Development, Softwareentwicklung, Software, Mobile Apps, HTML5, CSS, Zürich, Blog, Schweiz, Ruby, Ruby on Rails, Node.js, Python, Heroku, Linux, Git, Consulting, Coaching, Javascript, Open Source, Web Design, Responsive Design, CoffeeScript, Backbone.js, Solr, ELasticSearch, RubyMotion, Game development' name='keywords'>
+<title>The Coderetreat – Conway's Game of Life • gorilla software</title>
+<link rel="apple-touch-icon-precomposed apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144-precomposed.png" type="image/png" />
+<link rel="apple-touch-icon-precomposed apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114-precomposed.png" type="image/png" />
+<link rel="apple-touch-icon-precomposed apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72-precomposed.png" type="image/png" />
+<link rel="apple-touch-icon-precomposed apple-touch-icon" href="/apple-touch-icon-precomposed.png" type="image/png" />
+<link rel="shortcut icon" type="image/ico" href="/favicon.png" />
+<link rel="icon" type="image/ico" href="/favicon.ico" />
+<link href='http://creativecommons.org/licenses/by/3.0/' rel='license' title='Creative Commons Attribution 3.0 Unported License'>
+<link href="/stylesheets/app-aa716fbd.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="/javascripts/modernizr-9530b450.js" type="text/javascript"></script>
+<script src="//use.typekit.net/iof8zoc.js" type="text/javascript"></script>
+<script>
+  try{Typekit.load();}catch(e){}
+</script>
+</head>
+<body class='blog blog_2013 blog_2013_09 blog_2013_09_12 blog_2013_09_12_code-retreat blog_2013_09_12_code-retreat_index'>
+
+<header id='header-container'>
+
+<div class="contain-to-grid sticky"><nav class="top-bar"><ul class="title-area"><li class="name"><h1><a href="/">gorilla software</a></h1></li><li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li></ul><section class="top-bar-section"><ul class="right"><li><a href="/#about">Was</a></li><li><a href="/#team">Wer</a></li><li><a href="/#services">Wie</a></li><li><a href="/#clients">Referenzen</a></li><li><a href="/#contact">Kontakt</a></li><li><a href="/blog">Blog</a></li></ul></section></nav></div>
+</header>
+<div id='content-container'>
+<div id='content'><article class="article-entry" itemprop="blogPost" itemscope="" itemtype="http://schema.org/BlogPosting"><header class="entry-header"><time class="published updated" datetime="2013-09-12T00:00:00+00:00" itemprop="datePublished"><a href="/blog/2013/" itemprop="copyrightYear">2013</a> <a href="/blog/2013/09/">September</a> <a href="/blog/2013/09/12/">12</a></time></header><div><h2 class="entry-title" itemprop="headline">The Coderetreat – Conway's Game of Life</h2></div><div class="article-entry-content" itemprop="articleBody"><img src="/blog/2013/09/12/code-retreat/retreat-199da54c.jpg" /><small>Retreat at Long Island. Engraving by J.C. Armytage from painting by M.A. Wageman <a href="http://www.flickr.com/photos/ooocha/2594127956/">↩</a></small><h3>The Coderetreat</h3><p>Yesterday, I took part in my first  <a href="http://coderetreat.org/">Coderetreat</a> at the  <a href="ch-open.ch/wstage/workshop-tage/2013/aktuelles-programm-2013/ws-15-coderetreat-honing-the-craft-together/">/ch/open workshop days </a> in Zürich. I was pretty sceptical about the day to come. The course description didn't mention much about the topics which are to be worked on. But I was also looking forward to work on my <em>social coding skills</em>.  </p><h3>The course process</h3><p>The main task, we were working on for the whole day was called <a href="http://en.wikipedia.org/wiki/Conway's_Game_of_Life">Conway's Game of Life</a>.<blockquote>The Game of Life, also known simply as Life, is a cellular automaton devised by the British mathematician John Horton Conway in 1970. The "game" is a zero-player game, meaning that its evolution is determined by its initial state, requiring no further input. One interacts with the Game of Life by creating an initial configuration and observing how it evolves. <cite><a href="http://en.wikipedia.org/wiki/Conway's_Game_of_Life">Wikipedia</a></cite></blockquote></p><h4>Rules</h4><p><ol><li>Any live cell with fewer than two live neighbours dies, as if caused by under-population.</li><li>Any live cell with two or three live neighbours lives on to the next generation.</li><li>Any live cell with more than three live neighbours dies, as if by overcrowding.</li><li>Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.</li></ol></p><p>The main focus of the Coderetreat day wasn't the taks itself. It was more about the approach with focus on clean, re-usable code and test driven  development. The session lasted 45' each, with a 15' review session. </p><p>I'll try to summarize shortly the different sessions, what the individual goal was and my lessons learned. </p><h4>Session #1 - Warm-up</h4><p>This was mostly a warm-up round. As I was used to TDD already, I could dive into the problem solving immediately as the driver. </p><ul><li>Using a single file for specs and production code turned out to be a good choice for TDD, especially in early phases. </li><li>It's helpful to invest time and effort into your development environment. Being able to run the specs quickly with a keyboard shortcut (I use  <a href="https://github.com/skalnik/vim-vroom">vim-vroom</a> for that) or automated (e.g. with  <a href="https://github.com/guard/guard">guard</a> ) helps you to pick up speed, especially when moving between production-and test-code. </li><li>I liked the fact, that we had to delete the code after the session was over.</li></ul><h4>Session #2 - New constraint: No return values</h4><p>After changing groups, the coding started again from zero. As an additional constraint for this session, we were not allowed to use return values. </p><p>In this session, you could clearly see, how important it is to talk to your coding partner. Some challenges are better approached by thoroughly discuss a possible solution or approach upfront. In my opinion, this is what makes pair programming so valuable. </p><h4>Session #3 - New constraint: No conditionals</h4><p>OK, this time no conditionals. Almost all the groups came up with some sort of dictionary decision tree based solution. The proposed Object Oriented approach first seemed as a total overkill (it was some kind of state machine, where a cell could trigger a state change of a counter depending on it's own life state). </p><hr /><h4>Session #4 - New constraint: Time</h4><p>In my opinion, this was the best session. The 'Write test/implementation' and refactoring cycles were time-boxed to 3'. Later this time was reduced to 2' and even 1'. The implementation and test code that was not yet finished (green) had to be deleted after every cycle. </p><p>Also if the code quality was questionable, this was the session were I came closest to a running implementation. It forced to shrink your coding cycles to about one or two lines per production and test code each. This constraint really kept you going the red/green TDD iteration path. And it forces you to be proficient in your development environment. </p><h4>Session #5 - The Devil is in the details</h4><p>For the last session, I was working with a ActionScript/PHP developer and we were struggling in finding a suitable environment, that fit for both. It showed pretty quickly, that for a successful pairing session it's essential that both participants are familiar with the environment. As for me, I am using vim together with the Dvorak keyboard layout. You seldom find people who are familiar with this environment (that is also my biggest doubt about using it). But even a slight little change in your work-flow can already slow you down drastically (like the different layouts used in Switzerland like German, Swiss-German, US, ...). </p><p>If you are working together with a vim user, these issues can be addressed by using some sort of screen sharing (e.g. tmux). But again, it forces many people to leave their known environment. Perhaps the emerging usage of web IDEs like <a href="https://c9.io/">cloud9</a>can facilitate pair programming. </p><h3>The follow-ups</h3><p>As a follow up, I implemented the Game of Life in CoffeeScript. The code is
+available <a href="https://github.com/kpricorn/game-of-life">here</a>I will write a post about the implementation details. </p><h3>Summary</h3><p>All in all it was a great and exciting experience and I highly recommend to anyone to participate in such a Coderetreat day. </p></div><footer class="entry-footer"><div class="article-meta">Posted on <time class="published updated" datetime="2013-09-12T00:00:00+00:00" itemprop="datePublished"><a href="/blog/2013/" itemprop="copyrightYear">2013</a> <a href="/blog/2013/09/">September</a> <a href="/blog/2013/09/12/">12</a></time> </div><nav aria-labelledby="pagination" class="article-navigation" role="navigation"><div class="articles-nav"><div class="article-prev"><a href="/blog/2013/08/30/fec13-ii/" rel="prev">← FEC13 - Day 2</a></div><div class="article-page">•</div><div class="article-next"><a href="/blog/2013/09/14/game-of-life/" rel="next">Conway's Game of Life, again →</a></div></div></nav><hr /><div id="disqus_thread"></div>
+            <script type="text/javascript">
+            //<![CDATA[
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//gorillasoftware.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            //]]>
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </script></footer></article>
+</div>
+</div>
+<footer id='footer-container'>
+<div id='footer'>
+<div class='ruler'></div>
+<div class='newsletter row'>
+<form action='http://gorillasoftware.us7.list-manage.com/subscribe/post?u=5a4a472acf94be0e77c5796b6&amp;id=e9c19870ae' method='post' name='mc-embedded-subscribe-form' novalidate='' target='_blank'>
+<div class='columns medium-12 large-3'>
+<h2>Newsletter</h2>
+</div>
+<div class='columns medium-9 large-7'>
+<input class='email' id='newsletter' name='EMAIL' placeholder='E-Mail Adresse' required='' type='email' value=''>
+</div>
+<div class='columns medium-3 large-2'>
+<a onclick="$(this).closest(&quot;form&quot;).submit(); return false;" class="subscribe submit" href="#">Eintragen</a>
+</div>
+</form>
+</div>
+<div class='license'>
+<div class='row'>
+<div class='columns small-8 medium-9 large-10'>
+<p>
+<span property='dct:title' xmlns:dct='http://purl.org/dc/terms/'>
+Texts on gorilla software website and gorilla software blog
+</span>
+by
+<a property="cc:attributionName" rel="cc:attributionURL" xmlns:cc="http://creativecommons.org/ns#" href="http://gorillasoftware.ch">gorilla software GmbH
+</a>
+is licensed under a
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License
+</a>
+</p>
+</div>
+<div class='columns small-4 medium-3 large-2'>
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" />
+</a>
+</div>
+</div>
+<div class='row'>
+<div class='columns small-12 medium-9'>
+<p>artwork and logo © 2014 gorilla software GmbH. All Rights Reserved.</p>
+</div>
+</div>
+</div>
+</div>
+
+</footer>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js" type="text/javascript"></script>
+<script src="/javascripts/all-88cff686.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(["_setAccount", "UA-24038149-1"]);
+  _gaq.push(["_setDomainName", "gorillasoftware.ch"]);
+  _gaq.push(["_setAllowLinker", true]);
+  _gaq.push(["_trackPageview"]);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</body>
+</html>
+

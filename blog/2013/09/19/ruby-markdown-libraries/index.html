@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content='width=device-width,initial-scale=1' name='viewport'>
+<meta charset='utf-8'>
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+<meta content='Individuelle Lösungen fürs Web. Ein Full-Stack Web-Engineering Shop in Zürich, Schweiz' name='description'>
+<meta content='Software Development, Softwareentwicklung, Software, Mobile Apps, HTML5, CSS, Zürich, Blog, Schweiz, Ruby, Ruby on Rails, Node.js, Python, Heroku, Linux, Git, Consulting, Coaching, Javascript, Open Source, Web Design, Responsive Design, CoffeeScript, Backbone.js, Solr, ELasticSearch, RubyMotion, Game development' name='keywords'>
+<title>Overview of available ruby markdown libraries • gorilla software</title>
+<link rel="apple-touch-icon-precomposed apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144-precomposed.png" type="image/png" />
+<link rel="apple-touch-icon-precomposed apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114-precomposed.png" type="image/png" />
+<link rel="apple-touch-icon-precomposed apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72-precomposed.png" type="image/png" />
+<link rel="apple-touch-icon-precomposed apple-touch-icon" href="/apple-touch-icon-precomposed.png" type="image/png" />
+<link rel="shortcut icon" type="image/ico" href="/favicon.png" />
+<link rel="icon" type="image/ico" href="/favicon.ico" />
+<link href='http://creativecommons.org/licenses/by/3.0/' rel='license' title='Creative Commons Attribution 3.0 Unported License'>
+<link href="/stylesheets/app-aa716fbd.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="/javascripts/modernizr-9530b450.js" type="text/javascript"></script>
+<script src="//use.typekit.net/iof8zoc.js" type="text/javascript"></script>
+<script>
+  try{Typekit.load();}catch(e){}
+</script>
+</head>
+<body class='blog blog_2013 blog_2013_09 blog_2013_09_19 blog_2013_09_19_ruby-markdown-libraries blog_2013_09_19_ruby-markdown-libraries_index'>
+
+<header id='header-container'>
+
+<div class="contain-to-grid sticky"><nav class="top-bar"><ul class="title-area"><li class="name"><h1><a href="/">gorilla software</a></h1></li><li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li></ul><section class="top-bar-section"><ul class="right"><li><a href="/#about">Was</a></li><li><a href="/#team">Wer</a></li><li><a href="/#services">Wie</a></li><li><a href="/#clients">Referenzen</a></li><li><a href="/#contact">Kontakt</a></li><li><a href="/blog">Blog</a></li></ul></section></nav></div>
+</header>
+<div id='content-container'>
+<div id='content'><article class="article-entry" itemprop="blogPost" itemscope="" itemtype="http://schema.org/BlogPosting"><header class="entry-header"><time class="published updated" datetime="2013-09-19T00:00:00+00:00" itemprop="datePublished"><a href="/blog/2013/" itemprop="copyrightYear">2013</a> <a href="/blog/2013/09/">September</a> <a href="/blog/2013/09/19/">19</a></time></header><div><h2 class="entry-title" itemprop="headline">Overview of available ruby markdown libraries</h2></div><div class="article-entry-content" itemprop="articleBody"><p><img alt="Markdown in in iA Writer" src="/blog/2013/09/19/ruby-markdown-libraries/teaser-0e0f357c.gif" />
+<small>Markdown text in iA Writer</small></p>
+
+<p>I was confronted by the technology decision lately of chosing a ruby
+markdown library for a Rails project. The following overview was mostly
+of personal interest, but may be helpful for other people too. 
+For errata or missing libraries please contact me via the comments form.</p>
+
+<p>These were my requisites</p>
+
+<ul>
+<li>Support for tables</li>
+<li>Active development</li>
+<li>Support for Latex/PDF export (alternative via other markup language) <sup>A</sup></li>
+<li>Native markdown support for id/class <sup>A</sup></li>
+<li>Pure ruby (no C extensions) <sup>A</sup></li>
+</ul>
+
+<p><sup>A</sup> optional</p>
+
+<p></p>
+
+<table><thead>
+<tr>
+<th>Candidates</th>
+<th style="text-align: center">tables</th>
+<th style="text-align: center">pdf</th>
+<th style="text-align: center">pure ruby</th>
+<th style="text-align: center">Active development<sup>B</sup></th>
+<th>License</th>
+<th style="text-align: right">Remarks</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Github Markup <a href="https://github.com/github/markup">↩</a></td>
+<td style="text-align: center"></td>
+<td style="text-align: center"></td>
+<td style="text-align: center">✓</td>
+<td style="text-align: center">✓</td>
+<td>MIT</td>
+<td style="text-align: right">1</td>
+</tr>
+<tr>
+<td><del>Markup</del> <a href="https://github.com/jameswilding/markup">↩</a></td>
+<td style="text-align: center"></td>
+<td style="text-align: center"></td>
+<td style="text-align: center">✓</td>
+<td style="text-align: center"></td>
+<td></td>
+<td style="text-align: right"></td>
+</tr>
+<tr>
+<td>Redcarpet <a href="https://github.com/vmg/redcarpet">↩</a></td>
+<td style="text-align: center">✓</td>
+<td style="text-align: center"></td>
+<td style="text-align: center">✓</td>
+<td style="text-align: center">✓</td>
+<td></td>
+<td style="text-align: right">1, 2</td>
+</tr>
+<tr>
+<td>RDiscount <a href="https://github.com/davidfstr/rdiscount">↩</a></td>
+<td style="text-align: center"></td>
+<td style="text-align: center"></td>
+<td style="text-align: center"></td>
+<td style="text-align: center">✓</td>
+<td>BSD</td>
+<td style="text-align: right">3</td>
+</tr>
+<tr>
+<td>Bluecloth <a href="https://github.com/mislav/bluecloth/">↩</a></td>
+<td style="text-align: center"></td>
+<td style="text-align: center"></td>
+<td style="text-align: center">✓</td>
+<td style="text-align: center"></td>
+<td></td>
+<td style="text-align: right"></td>
+</tr>
+<tr>
+<td>Bluecloth 2 <a href="https://github.com/ged/bluecloth">↩</a></td>
+<td style="text-align: center"></td>
+<td style="text-align: center"></td>
+<td style="text-align: center">✓</td>
+<td style="text-align: center"></td>
+<td></td>
+<td style="text-align: right"></td>
+</tr>
+<tr>
+<td>kramdown <a href="https://github.com/gettalong/kramdown">↩</a></td>
+<td style="text-align: center">✓</td>
+<td style="text-align: center">✓</td>
+<td style="text-align: center">✓</td>
+<td style="text-align: center">✓</td>
+<td>MIT</td>
+<td style="text-align: right"></td>
+</tr>
+<tr>
+<td>Maruku <a href="https://github.com/bhollis/maruku">↩</a></td>
+<td style="text-align: center"></td>
+<td style="text-align: center">✓</td>
+<td style="text-align: center">✓</td>
+<td style="text-align: center">✓</td>
+<td>MIT</td>
+<td style="text-align: right">4</td>
+</tr>
+</tbody></table>
+
+<h4>Non-ruby implementations</h4>
+
+<table><thead>
+<tr>
+<th>Candidates</th>
+<th style="text-align: center">tables</th>
+<th style="text-align: center">pdf</th>
+<th style="text-align: center">pure ruby</th>
+<th style="text-align: center">Active development<sup>B</sup></th>
+<th>License</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>pandoc-markdown <a href="http://johnmacfarlane.net/pandoc/">↩</a></td>
+<td style="text-align: center">✓</td>
+<td style="text-align: center">✓</td>
+<td style="text-align: center">-</td>
+<td style="text-align: center">✓</td>
+<td>GPL</td>
+</tr>
+<tr>
+<td>MultiMarkdown <a href="https://github.com/fletcher/MultiMarkdown">↩</a> <br>(aka MultiMarkdown.pl)</td>
+<td style="text-align: center">✓</td>
+<td style="text-align: center">✓</td>
+<td style="text-align: center">-</td>
+<td style="text-align: center"></td>
+<td></td>
+</tr>
+<tr>
+<td>MultiMarkdown <a href="https://github.com/fletcher/peg-multimarkdown">↩</a> <br>(aka peg-multimarkdown or MultiMarkdown v3)</td>
+<td style="text-align: center">✓</td>
+<td style="text-align: center">✓</td>
+<td style="text-align: center">-</td>
+<td style="text-align: center"></td>
+<td></td>
+</tr>
+<tr>
+<td>MultiMarkdown 4 <a href="https://github.com/fletcher/MultiMarkdown-4">↩</a></td>
+<td style="text-align: center">✓</td>
+<td style="text-align: center">✓</td>
+<td style="text-align: center">-</td>
+<td style="text-align: center">✓</td>
+<td>GPL/MIT</td>
+</tr>
+</tbody></table>
+
+<h2>Remarks</h2>
+
+<ol>
+<li>Redcarpet is the Github Markdown rendering library used in Github Markdown</li>
+<li>This document is a markdown file rendered with Redcarpet (via Middleman), see <a href="https://github.com/gorillasoftware/gorillasoftware/blob/master/source/blog/2013-09-19-ruby-markdown-libraries.markdown">here</a></li>
+<li>RDiscount is a wrapper for Discount (Discount is an implementation of John Gruber&rsquo;s Markdown markup language in C)</li>
+<li>Support for tables via inline HTML</li>
+</ol>
+
+<p><sup>B</sup> I presume a project with multiple commits to the project repository in the last 12
+months as in active development.</p>
+</div><footer class="entry-footer"><div class="article-meta">Posted on <time class="published updated" datetime="2013-09-19T00:00:00+00:00" itemprop="datePublished"><a href="/blog/2013/" itemprop="copyrightYear">2013</a> <a href="/blog/2013/09/">September</a> <a href="/blog/2013/09/19/">19</a></time> </div><nav aria-labelledby="pagination" class="article-navigation" role="navigation"><div class="articles-nav"><div class="article-prev"><a href="/blog/2013/09/16/come-in-we-are-open/" rel="prev">← Come in, we're open</a></div><div class="article-page">•</div><div class="article-next">&nbsp;</div></div></nav><hr /><div id="disqus_thread"></div>
+            <script type="text/javascript">
+            //<![CDATA[
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//gorillasoftware.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            //]]>
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </script></footer></article>
+</div>
+</div>
+<footer id='footer-container'>
+<div id='footer'>
+<div class='ruler'></div>
+<div class='newsletter row'>
+<form action='http://gorillasoftware.us7.list-manage.com/subscribe/post?u=5a4a472acf94be0e77c5796b6&amp;id=e9c19870ae' method='post' name='mc-embedded-subscribe-form' novalidate='' target='_blank'>
+<div class='columns medium-12 large-3'>
+<h2>Newsletter</h2>
+</div>
+<div class='columns medium-9 large-7'>
+<input class='email' id='newsletter' name='EMAIL' placeholder='E-Mail Adresse' required='' type='email' value=''>
+</div>
+<div class='columns medium-3 large-2'>
+<a onclick="$(this).closest(&quot;form&quot;).submit(); return false;" class="subscribe submit" href="#">Eintragen</a>
+</div>
+</form>
+</div>
+<div class='license'>
+<div class='row'>
+<div class='columns small-8 medium-9 large-10'>
+<p>
+<span property='dct:title' xmlns:dct='http://purl.org/dc/terms/'>
+Texts on gorilla software website and gorilla software blog
+</span>
+by
+<a property="cc:attributionName" rel="cc:attributionURL" xmlns:cc="http://creativecommons.org/ns#" href="http://gorillasoftware.ch">gorilla software GmbH
+</a>
+is licensed under a
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License
+</a>
+</p>
+</div>
+<div class='columns small-4 medium-3 large-2'>
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" />
+</a>
+</div>
+</div>
+<div class='row'>
+<div class='columns small-12 medium-9'>
+<p>artwork and logo © 2014 gorilla software GmbH. All Rights Reserved.</p>
+</div>
+</div>
+</div>
+</div>
+
+</footer>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js" type="text/javascript"></script>
+<script src="/javascripts/all-88cff686.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(["_setAccount", "UA-24038149-1"]);
+  _gaq.push(["_setDomainName", "gorillasoftware.ch"]);
+  _gaq.push(["_setAllowLinker", true]);
+  _gaq.push(["_trackPageview"]);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</body>
+</html>
+

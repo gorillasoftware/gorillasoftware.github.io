@@ -1,0 +1,1 @@
+(function(){$(function(){var t;return t=Modernizr.touch?"sticky-disabled":"sticky",$(document).foundation("topbar",{stickyClass:t,scrolltop:!1}),$(document).foundation("orbit",{timer_show_progress_bar:!1}),$(document).foundation("tooltips")})}).call(this);
